@@ -16,7 +16,7 @@ namespace Boter_Kaas_en_Eieren
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new TicTacToe());
         }
     }
 }
