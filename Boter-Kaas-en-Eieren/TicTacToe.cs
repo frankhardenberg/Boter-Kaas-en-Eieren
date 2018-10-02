@@ -17,16 +17,9 @@ namespace Boter_Kaas_en_Eieren
             InitializeComponent();
         }
 
-        string A;
-        string B;
-        string C;
-        string Row1;
-        string Row2;
-        string Row3;
-
         bool Turn = true;
         int TurnCount = 0;
-        List<string> Alghoritmes = new List<string>();
+        bool Winner = false;
 
         private void Letter_Click(object sender, EventArgs e)
         {
@@ -44,13 +37,18 @@ namespace Boter_Kaas_en_Eieren
             Turn = !Turn;
             Klik.Enabled = false;            
             TurnCount++;
+
+            if (TurnCount == 9 && Winner == false)
+            {
+                MessageBox.Show("It's a draw!");
+            }            
         }
 
         public void WinnaarsCheck()
         {
             if (A1.Text == "X" && A2.Text == "X" && A3.Text == "X")
             {
-                MessageBox.Show("Player 'X' wins!");                
+                MessageBox.Show("Player 'X' wins!");
             }
 
             if (B1.Text == "X" && B2.Text == "X" && B3.Text == "X")
@@ -66,6 +64,7 @@ namespace Boter_Kaas_en_Eieren
             if (A1.Text == "X" && B2.Text == "X" && C3.Text == "X" || C1.Text == "X" && B2.Text == "X" && A3.Text == "X") 
             {
                 MessageBox.Show("Player 'X' wins!");
+
             }
 
             if (A1.Text == "X" && B1.Text == "X" && C1.Text == "X")
@@ -82,18 +81,44 @@ namespace Boter_Kaas_en_Eieren
             {
                 MessageBox.Show("Player 'X' wins!");
             }
-        }
-
-        public void Listjes()
-        {
-            Alghoritmes.Add(B1.Text);
-            Alghoritmes.Add(B2.Text);
-            Alghoritmes.Add(B3.Text);
-        }
-
-        public void WinnerOrNot()
-        {
             
-        }
+            if (A1.Text == "O" && A2.Text == "O" && A3.Text == "O")
+            {
+                MessageBox.Show("Player 'O' wins!");
+            }
+
+            if (B1.Text == "O" && B2.Text == "O" && B3.Text == "O")
+            {
+                MessageBox.Show("Player 'O' wins!");
+            }
+
+            if (C1.Text == "O" && C2.Text == "O" && C3.Text == "O")
+            {
+                MessageBox.Show("Player 'O' wins!");
+            }
+
+            if (A1.Text == "O" && B2.Text == "O" && C3.Text == "O" || C1.Text == "O" && B2.Text == "O" && A3.Text == "O")
+            {
+                MessageBox.Show("Player 'O' wins!");
+            }
+
+            if (A1.Text == "O" && B1.Text == "O" && C1.Text == "O")
+            {
+                MessageBox.Show("Player 'O' wins!");
+            }
+
+            if (A2.Text == "O" && B2.Text == "O" && C2.Text == "O")
+            {
+                MessageBox.Show("Player 'O' wins!");
+            }
+
+            if (A3.Text == "O" && B3.Text == "O" && C3.Text == "O")
+            {
+                MessageBox.Show("Player 'O' wins!");
+            }
+
+            Winner = true;
+        }             
     }
 }
+// Toevoegen: Menu strip, met New Game (F2 Knop) & Quit (ESC of F4 Knop) & label wie zijn beurt het is.
