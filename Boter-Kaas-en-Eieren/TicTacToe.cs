@@ -19,9 +19,7 @@ namespace Boter_Kaas_en_Eieren
 
         bool Turn = true;
         int TurnCount = 0;
-        bool Winner;
-
-        
+        bool Winner;        
 
         private void Letter_Click(object sender, EventArgs e)
         {
@@ -59,7 +57,7 @@ namespace Boter_Kaas_en_Eieren
         }
 
         private void quitF4ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {            
             Application.Exit();
         }
 
