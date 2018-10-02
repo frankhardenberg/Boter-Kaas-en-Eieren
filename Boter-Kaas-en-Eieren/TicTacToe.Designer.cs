@@ -37,6 +37,11 @@
             this.C1 = new System.Windows.Forms.Button();
             this.C2 = new System.Windows.Forms.Button();
             this.C3 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newGameF2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitF4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // A1
@@ -120,6 +125,40 @@
             this.C3.UseVisualStyleBackColor = true;
             this.C3.Click += new System.EventHandler(this.Letter_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(258, 24);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newGameF2ToolStripMenuItem,
+            this.quitF4ToolStripMenuItem});
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Text = "Menu";
+            this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
+            // 
+            // newGameF2ToolStripMenuItem
+            // 
+            this.newGameF2ToolStripMenuItem.Name = "newGameF2ToolStripMenuItem";
+            this.newGameF2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newGameF2ToolStripMenuItem.Text = "New Game [F2]";
+            this.newGameF2ToolStripMenuItem.Click += new System.EventHandler(this.newGameF2ToolStripMenuItem_Click);
+            // 
+            // quitF4ToolStripMenuItem
+            // 
+            this.quitF4ToolStripMenuItem.Name = "quitF4ToolStripMenuItem";
+            this.quitF4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitF4ToolStripMenuItem.Text = "Quit [F4]";
+            this.quitF4ToolStripMenuItem.Click += new System.EventHandler(this.quitF4ToolStripMenuItem_Click);
+            // 
             // TicTacToe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,10 +173,15 @@
             this.Controls.Add(this.A3);
             this.Controls.Add(this.A2);
             this.Controls.Add(this.A1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "TicTacToe";
             this.Text = "TicTacToe";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -152,6 +196,10 @@
         private System.Windows.Forms.Button C1;
         private System.Windows.Forms.Button C2;
         private System.Windows.Forms.Button C3;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newGameF2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quitF4ToolStripMenuItem;
     }
 }
 
