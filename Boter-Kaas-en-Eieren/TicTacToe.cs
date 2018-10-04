@@ -15,26 +15,38 @@ namespace Boter_Kaas_en_Eieren
         public TicTacToe()
         {
             InitializeComponent();
-            this.KeyPreview = true;
-            this.KeyPress += new KeyPressEventHandler(TicTacToe_Keypress);
+            Turntext.Text = "Player X his turn";
         }
-
+        
         bool Turn = true;
         int TurnCount = 0;
-        bool Winner;
+        bool Winner;           
 
         private void Letter_Click(object sender, EventArgs e)
-        {
-            Button Klik = (Button)sender;
+        {            
+            Button Klik = (Button)sender;            
 
-            if (Turn)
+            if (Turn == true)
             {
+                Turntext.Text = "Player O his turn!";
                 Klik.Text = "X";
-            }
+
+                if (Winner == true)
+                {
+                    
+                }
+            }           
 
             else
             {
+                Turntext.Text = "Player X his turn!";
                 Klik.Text = "O";
+
+                if (Winner == true)
+                {
+                    Turntext.Text = string.Empty;
+                    Klik.Text = string.Empty;
+                }
             }
 
             Turn = !Turn;
@@ -61,22 +73,7 @@ namespace Boter_Kaas_en_Eieren
         {            
             Application.Exit();
         }        
-
-        void TicTacToe_Keypress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.F2)
-            {
-                NewGame();
-                e.Handled = true;                
-            }
-
-            if (e.KeyChar == (char)Keys.F4)
-            {
-                Application.Exit();
-                e.Handled = true;
-            }
-        }
-
+        
         public void NewGame()
         {
             TurnCount = 0;
@@ -89,99 +86,113 @@ namespace Boter_Kaas_en_Eieren
             if (A1.Text == "X" && A2.Text == "X" && A3.Text == "X")
             {
                 Winner = true;
-                MessageBox.Show("Player 'X' wins!");
                 DisableAllButtons();
+                Turntext.Text = string.Empty;
+                MessageBox.Show("Player 'X' wins!");
             }
 
             if (B1.Text == "X" && B2.Text == "X" && B3.Text == "X")
             {
                 Winner = true;
-                MessageBox.Show("Player 'X' wins!");
                 DisableAllButtons();
+                Turntext.Text = string.Empty;
+                MessageBox.Show("Player 'X' wins!");
             }
 
             if (C1.Text == "X" && C2.Text == "X" && C3.Text == "X")
             {
                 Winner = true;
-                MessageBox.Show("Player 'X' wins!");
                 DisableAllButtons();
+                Turntext.Text = string.Empty;
+                MessageBox.Show("Player 'X' wins!");
             }
 
             if (A1.Text == "X" && B2.Text == "X" && C3.Text == "X" || C1.Text == "X" && B2.Text == "X" && A3.Text == "X")
             {
                 Winner = true;
-                MessageBox.Show("Player 'X' wins!");
                 DisableAllButtons();
+                Turntext.Text = string.Empty;
+                MessageBox.Show("Player 'X' wins!");
             }
 
             if (A1.Text == "X" && B1.Text == "X" && C1.Text == "X")
             {
                 Winner = true;
-                MessageBox.Show("Player 'X' wins!");
                 DisableAllButtons();
+                Turntext.Text = string.Empty;
+                MessageBox.Show("Player 'X' wins!");
             }
 
             if (A2.Text == "X" && B2.Text == "X" && C2.Text == "X")
             {
                 Winner = true;
-                MessageBox.Show("Player 'X' wins!");
                 DisableAllButtons();
+                Turntext.Text = string.Empty;
+                MessageBox.Show("Player 'X' wins!");
             }
 
             if (A3.Text == "X" && B3.Text == "X" && C3.Text == "X")
             {
-                Winner = true;
-                MessageBox.Show("Player 'X' wins!");
+                Winner = true;                
                 DisableAllButtons();
+                Turntext.Text = string.Empty;
+                MessageBox.Show("Player 'X' wins!");
             }
 
             if (A1.Text == "O" && A2.Text == "O" && A3.Text == "O")
             {
                 Winner = true;
-                MessageBox.Show("Player 'O' wins!");
                 DisableAllButtons();
+                Turntext.Text = string.Empty;
+                MessageBox.Show("Player 'O' wins!");
             }
 
             if (B1.Text == "O" && B2.Text == "O" && B3.Text == "O")
             {
                 Winner = true;
-                MessageBox.Show("Player 'O' wins!");
                 DisableAllButtons();
+                Turntext.Text = string.Empty;
+                MessageBox.Show("Player 'O' wins!");
             }
 
             if (C1.Text == "O" && C2.Text == "O" && C3.Text == "O")
             {
                 Winner = true;
-                MessageBox.Show("Player 'O' wins!");
                 DisableAllButtons();
+                Turntext.Text = string.Empty;
+                MessageBox.Show("Player 'O' wins!");
             }
 
             if (A1.Text == "O" && B2.Text == "O" && C3.Text == "O" || C1.Text == "O" && B2.Text == "O" && A3.Text == "O")
             {
                 Winner = true;
-                MessageBox.Show("Player 'O' wins!");
                 DisableAllButtons();
+                Turntext.Text = string.Empty;
+                MessageBox.Show("Player 'O' wins!");
             }
 
             if (A1.Text == "O" && B1.Text == "O" && C1.Text == "O")
             {
                 Winner = true;
-                MessageBox.Show("Player 'O' wins!");
                 DisableAllButtons();
+                Turntext.Text = string.Empty;
+                MessageBox.Show("Player 'O' wins!");
             }
 
             if (A2.Text == "O" && B2.Text == "O" && C2.Text == "O")
             {
-                Winner = true;
-                MessageBox.Show("Player 'O' wins!");
+                Winner = true;                
                 DisableAllButtons();
+                Turntext.Text = string.Empty;
+                MessageBox.Show("Player 'O' wins!");
             }
 
             if (A3.Text == "O" && B3.Text == "O" && C3.Text == "O")
             {
                 Winner = true;
-                MessageBox.Show("Player 'O' wins!");
                 DisableAllButtons();
+                Turntext.Text = string.Empty;
+                MessageBox.Show("Player 'O' wins!");
             }
         }
 
@@ -223,10 +234,10 @@ namespace Boter_Kaas_en_Eieren
             C2.Text = String.Empty;
             C3.Text = String.Empty;
         }
-
-        private void True(object sender, PreviewKeyDownEventArgs e)
+        
+        private void Turntext_Click(object sender, EventArgs e)
         {
         }
     }
 }
-// Toevoegen: Menu strip, met New Game (F2 Knop) & Quit (ESC of F4 Knop) & label wie zijn beurt het is.
+// Toevoegen: Aanroepfuncties voor F2 en F4 knop.

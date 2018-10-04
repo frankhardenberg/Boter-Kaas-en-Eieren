@@ -41,6 +41,7 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameF2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitF4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Turntext = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,6 @@
             this.A1.TabIndex = 0;
             this.A1.UseVisualStyleBackColor = true;
             this.A1.Click += new System.EventHandler(this.Letter_Click);
-            this.A1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TicTacToe_Keypress);
             // 
             // A2
             // 
@@ -160,11 +160,21 @@
             this.quitF4ToolStripMenuItem.Text = "Quit [F4]";
             this.quitF4ToolStripMenuItem.Click += new System.EventHandler(this.quitF4ToolStripMenuItem_Click);
             // 
+            // Turntext
+            // 
+            this.Turntext.AutoSize = true;
+            this.Turntext.Location = new System.Drawing.Point(105, 10);
+            this.Turntext.Name = "Turntext";
+            this.Turntext.Size = new System.Drawing.Size(0, 13);
+            this.Turntext.TabIndex = 10;
+            this.Turntext.Click += new System.EventHandler(this.Turntext_Click);
+            // 
             // TicTacToe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 299);
+            this.ClientSize = new System.Drawing.Size(258, 304);
+            this.Controls.Add(this.Turntext);
             this.Controls.Add(this.C1);
             this.Controls.Add(this.C2);
             this.Controls.Add(this.C3);
@@ -179,8 +189,6 @@
             this.MaximizeBox = false;
             this.Name = "TicTacToe";
             this.Text = "TicTacToe";
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TicTacToe_Keypress);
-            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.True);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -203,6 +211,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newGameF2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitF4ToolStripMenuItem;
+        private System.Windows.Forms.Label Turntext;
     }
 }
 
