@@ -15,12 +15,13 @@ namespace Boter_Kaas_en_Eieren
         public TicTacToe()
         {
             InitializeComponent();
-            this.KeyPreview = true;            
+            this.KeyPreview = true;
+            this.KeyPress += new KeyPressEventHandler(TicTacToe_Keypress);
         }
 
         bool Turn = true;
         int TurnCount = 0;
-        bool Winner;        
+        bool Winner;
 
         private void Letter_Click(object sender, EventArgs e)
         {
@@ -61,18 +62,18 @@ namespace Boter_Kaas_en_Eieren
             Application.Exit();
         }        
 
-        void TicTacToe_Keypress(object TicTacToe, KeyPressEventArgs e)
+        void TicTacToe_Keypress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.F2)
             {
-                e.Handled = true;
                 NewGame();
+                e.Handled = true;                
             }
 
             if (e.KeyChar == (char)Keys.F4)
             {
-                e.Handled = true;
                 Application.Exit();
+                e.Handled = true;
             }
         }
 
@@ -221,6 +222,10 @@ namespace Boter_Kaas_en_Eieren
             C1.Text = String.Empty;
             C2.Text = String.Empty;
             C3.Text = String.Empty;
+        }
+
+        private void True(object sender, PreviewKeyDownEventArgs e)
+        {
         }
     }
 }

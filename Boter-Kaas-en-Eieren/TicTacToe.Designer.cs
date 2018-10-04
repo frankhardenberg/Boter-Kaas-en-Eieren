@@ -52,6 +52,7 @@
             this.A1.TabIndex = 0;
             this.A1.UseVisualStyleBackColor = true;
             this.A1.Click += new System.EventHandler(this.Letter_Click);
+            this.A1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TicTacToe_Keypress);
             // 
             // A2
             // 
@@ -148,14 +149,14 @@
             // newGameF2ToolStripMenuItem
             // 
             this.newGameF2ToolStripMenuItem.Name = "newGameF2ToolStripMenuItem";
-            this.newGameF2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newGameF2ToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.newGameF2ToolStripMenuItem.Text = "New Game [F2]";
             this.newGameF2ToolStripMenuItem.Click += new System.EventHandler(this.newGameF2ToolStripMenuItem_Click);
             // 
             // quitF4ToolStripMenuItem
             // 
             this.quitF4ToolStripMenuItem.Name = "quitF4ToolStripMenuItem";
-            this.quitF4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitF4ToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.quitF4ToolStripMenuItem.Text = "Quit [F4]";
             this.quitF4ToolStripMenuItem.Click += new System.EventHandler(this.quitF4ToolStripMenuItem_Click);
             // 
@@ -178,6 +179,8 @@
             this.MaximizeBox = false;
             this.Name = "TicTacToe";
             this.Text = "TicTacToe";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TicTacToe_Keypress);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.True);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
