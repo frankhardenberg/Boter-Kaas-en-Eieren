@@ -15,6 +15,7 @@ namespace Boter_Kaas_en_Eieren
         public TicTacToe()
         {
             InitializeComponent();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TicTacToe_KeyDown);
             Turntext.Text = "Player X his turn";
         }
         
@@ -78,7 +79,10 @@ namespace Boter_Kaas_en_Eieren
         {
             TurnCount = 0;
             ClearAllFields();
+            Turntext.Text = "";
             EnableAllButtons();
+            Turntext.Text = "Player X his turn";
+            Turn = true;
         }
 
         public void WinnaarsCheck()
@@ -194,6 +198,8 @@ namespace Boter_Kaas_en_Eieren
                 Turntext.Text = string.Empty;
                 MessageBox.Show("Player 'O' wins!");
             }
+
+            Winner = false;
         }
 
         public void EnableAllButtons()
@@ -238,6 +244,18 @@ namespace Boter_Kaas_en_Eieren
         private void Turntext_Click(object sender, EventArgs e)
         {
         }
+
+        private void TicTacToe_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                NewGame();
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
-// Toevoegen: Aanroepfuncties voor F2 en F4 knop.
